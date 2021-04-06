@@ -1038,7 +1038,7 @@ function Execute-SQLScriptFile {
     #https://www.microsoft.com/en-us/download/confirmation.aspx?id=56567
     #https://go.microsoft.com/fwlink/?linkid=2082790
 
-    if ($UseAPI) {
+  <#  if ($UseAPI) {
         Execute-SQLQuery -WorkspaceName $WorkspaceName -SQLPoolName $SQLPoolName -SQLQuery $sqlQuery -ForceReturn $ForceReturn
     } else {
         if ($ForceReturn) {
@@ -1048,7 +1048,7 @@ function Execute-SQLScriptFile {
             Invoke-SqlCmd -Query $sqlQuery -ServerInstance $sqlEndpoint -Database $sqlPoolName -Username $sqlUser -Password $global:sqlPassword
             #& sqlcmd -S $sqlEndpoint -d $sqlPoolName -U $userName -P $password -G -I -Q $sqlQuery
         }
-    }
+    }   #>
 }
 
 function Create-SQLScript {
